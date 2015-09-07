@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Yelp-->
+        <!--Businesses View Controller-->
         <scene sceneID="5L9-Uz-lNK">
             <objects>
                 <viewController id="2xI-yr-O5N" customClass="BusinessesViewController" customModule="Yelp" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="208" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XI0-1V-kEl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="208" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XI0-1V-kEl">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -114,9 +114,16 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VBY-gq-v8E" firstAttribute="top" secondItem="XI0-1V-kEl" secondAttribute="bottom" id="NAh-sF-lIK"/>
+                            <constraint firstItem="XI0-1V-kEl" firstAttribute="top" secondItem="XhR-oz-92f" secondAttribute="top" id="eDj-Ni-Qqr"/>
+                            <constraint firstAttribute="trailing" secondItem="XI0-1V-kEl" secondAttribute="trailing" id="gu5-uF-k37"/>
+                            <constraint firstItem="XI0-1V-kEl" firstAttribute="leading" secondItem="XhR-oz-92f" secondAttribute="leading" id="iwU-rw-AMm"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Yelp" id="YPN-cK-RV0">
-                        <barButtonItem key="leftBarButtonItem" title="Filters" id="Q7K-6F-jI3">
+                    <navigationItem key="navigationItem" id="YPN-cK-RV0">
+                        <barButtonItem key="leftBarButtonItem" tag="-1" title="Filters" id="Q7K-6F-jI3">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="xW9-ND-e9L" kind="modal" id="kh9-fJ-gpv"/>
                             </connections>
@@ -142,23 +149,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hmt-Pl-25L">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hmt-Pl-25L">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SwitchCell" rowHeight="120" id="bF8-eD-ahs" customClass="SwitchCell" customModule="Yelp" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SwitchCell" rowHeight="60" id="bF8-eD-ahs" customClass="SwitchCell" customModule="Yelp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bF8-eD-ahs" id="JGX-Bw-LgR">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyq-kx-tbT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyq-kx-tbT">
                                                     <rect key="frame" x="8" y="49.5" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sXV-1d-bEb">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sXV-1d-bEb">
                                                     <rect key="frame" x="263" y="44.5" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
@@ -171,7 +178,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="onSwitch" destination="sXV-1d-bEb" id="tTr-uv-vCs"/>
-                                            <outlet property="switchLabel" destination="dyq-kx-tbT" id="iiX-Kv-g1o"/>
+                                            <outlet property="switchLable" destination="dyq-kx-tbT" id="sTo-a5-9o0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -187,18 +194,19 @@
                     </view>
                     <navigationItem key="navigationItem" title="Filters" id="cfw-qA-Rvj">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="fH5-Za-a96">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="onCancelButton:" destination="U8y-hu-7se" id="K98-x3-TgE"/>
+                                <action selector="onCancelButton:" destination="U8y-hu-7se" id="rlL-UK-JLg"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Search" id="P9F-9K-SQF">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="onSearchButton:" destination="U8y-hu-7se" id="Rg0-4X-gEt"/>
+                                <action selector="onSearchButton:" destination="U8y-hu-7se" id="DtB-At-3aQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="onSearchButton" destination="P9F-9K-SQF" id="XsC-ic-MEC"/>
                         <outlet property="tableView" destination="Hmt-Pl-25L" id="AV0-gr-tIM"/>
                     </connections>
                 </viewController>
@@ -214,7 +222,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Ci-Re-ywa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.3504270755632648" green="1" blue="0.49407628912754797" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.27913672070000001" blue="0.29268408909999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -233,6 +241,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dtf-qN-qgW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.27913672070000001" blue="0.29268408909999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
