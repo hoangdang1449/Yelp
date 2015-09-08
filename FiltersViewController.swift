@@ -27,7 +27,7 @@ class FiltersViewController: UIViewController,UITableViewDataSource, UITableView
         categories = yelpCategories()
         tableView.delegate = self
         tableView.dataSource = self
-        radiusValue = [nil, 0.5, 1, 3, 10]
+        radiusValue = [nil, 0.5, 5, 10]
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,7 +64,7 @@ class FiltersViewController: UIViewController,UITableViewDataSource, UITableView
         case 0:
             return 1
         case 1:
-            return 2
+            return 4
         case 2:
             return 3
         case 3:
@@ -89,14 +89,21 @@ class FiltersViewController: UIViewController,UITableViewDataSource, UITableView
             //Radius Section
             let cell = tableView.dequeueReusableCellWithIdentifier("SwitchCell", forIndexPath: indexPath) as! SwitchCell
             cell.delegate = self
-            if indexPath.row == 0 {
+            switch indexPath.row {
+            case 0:
                 cell.switchLable.text = "Auto"
-            } else {
-                if radiusValue[indexPath.row] == 1 {
-                    cell.switchLable.text =  String(format: "%g", radiusValue[indexPath.row]!) + " mile"
-                } else {
-                    cell.switchLable.text =  String(format: "%g", radiusValue[indexPath.row]!) + " miles"
-                }
+                break
+            case 1:
+                cell.switchLable.text =  String(format: "%g", radiusValue[indexPath.row]!) + " miles"
+                break
+            case 2:
+                cell.switchLable.text =  String(format: "%g", radiusValue[indexPath.row]!) + " miles"
+                break
+            case 3:
+                cell.switchLable.text =  String(format: "%g", radiusValue[indexPath.row]!) + " miles"
+                break
+            default:
+                break
             }
             return cell
             
@@ -112,7 +119,7 @@ class FiltersViewController: UIViewController,UITableViewDataSource, UITableView
                 cell.switchLable.text = "Distance"
                 break
             case 2:
-                cell.switchLable.text = "Rating"
+                cell.switchLable.text = "Highest Rated"
                 break
             default:
                 break
