@@ -25,3 +25,6 @@ Filter page. Unfortunately, not all the filters are supported in the Yelp API.
 
 [x] Display some of the available Yelp categories (choose any 3-4 that you want).
 
+![yelp_week2_assignment](https://cloud.githubusercontent.com/assets/13508908/9724785/38c53df8-5607-11e5-8317-15480fcae670.gif)
+
+
